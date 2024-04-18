@@ -16,266 +16,199 @@
 
 % include metadata in the generated pdf file
 \pdfinfo{
-    /Title (The Occidental Computer Science Comprehensive Project: Goals, Timeline, Format, and Advice)
-    /Author (Justin Li)
+    /Title (Autonomous Vehicle - Ethics Paper)
+    /Author (James Derrod)
 }
 
 % set the title and author information
-\title{The Occidental Computer Science Comprehensive Project: \\ Goals, Timeline, Format, and Advice}
-\author{Justin Li}
+\title{Autonomous Vehicle - Ethics Paper}
+\author{James Derrod}
 \affiliation{Occidental College}
-\email{justinnhli@oxy.edu}
+\email{jderrod@oxy.edu}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction} In the rapidly evolving field of artificial intelligence, the integration of deep reinforcement learning (DRL) with autonomous systems presents both groundbreaking potential and a multitude of ethical challenges. 
 
-This document serves describes the Oxy CS Comps process.
-The first section describes the timeline of comps, as well as the main requirements of a comps project.
-Since one of the main deliverable is a final paper, there is then an interlude on {\LaTeX}, which you will use to write the paper.
-This document then goes into the sections of that final paper and what is expected of it.
-We conclude with some miscellaneous tips for successfully completing comps.
+For my comps project, I plan on developing a DRL algorithm to train an agent to successfully drive a car within a Unity environment. Unity is one of the largest, publicly available platforms for video game development, and allows for the use of the MLAgents toolkit, as well as rendering capabilities. The MLAgents toolkit is useful for integrating machine learning agents into Unity, facilitating the training, evaluation, and visualization of an agent's learning process and operational efficiency.
 
-\section{Computer Science Comps}
-
-Occidental's ``Comprehensive Requirement'' is a graduation requirement that serves two goals: ``to provide an opportunity for senior students to synthesize the essential[s] [...] of their academic field'', and ``to provide an opportunity for students to demonstrate competence in their field'' \cite{OccidentalComps}.
-For computer science, the breadth of the field means that comps leans heavily towards the second goal: most CS comps are large coding projects that showcase what a student has learned in their four years at Oxy.
-In that sense, a CS comps project is more like a Studio Arts comps project: you could draw from multiple subfields or focus on just one, but the essence is to take on a complex project of your choice while situating it within the methods of CS.
-
-\subsection{Timeline}
-
-Since comps is a significant undertaking, the CS major curriculum has two courses to support comps projects.
-Most students will take CS Junior Seminar in the spring of their junior year, then take CS Senior Seminar in the fall of their senior year.
-One of the main goals of Junior Seminar is to prepare students for their comps project, including selecting a topic, exploring the literature, and writing a detailed proposal of what they will do.
-The entirety of Senior Seminar is dedicated to students completing their comps; however, it is necessary to separate the Senior Seminar course from the comps graduation requirement.
-Senior Seminar is a required course for the CS major, and it concludes at the end of the fall semester with a grade.
-Comps, on the other hand, is an Oxy graduation requirement, and concludes at the end of the senior year with either ``fail'', ``pass'', or ``pass with distinction'' \cite{OccidentalComps}.
-While the sole purpose of Senior Seminar is to support students working on comps, it is possible for a student to complete the \textit{course} without completing the \textit{graduation requirement}.
-This could occur, for example, if the student ran out of time to finish the project, but submitted all the assignments for Senior Seminar.
-In that case, the student will continue working in the spring senior semester to complete their comps, until they have a ``pass'' or ``pass with distinction'' result.
-A summary of this timeline can be found in Table \ref{tbl:timeline}.
-
-\begin{table}
-    \footnotesize
-    \begin{tabular}{r|cl}
-        \textbf{Semester}       &  \textbf{Course}  &  \textbf{Deliverable(s)}          \\
-        \hline \\
-        \textbf{Junior Spring}  &  COMP 390         &  Comps proposal; Tutorial report  \\
-        \textbf{Summer}         &  -                &  Additional research              \\
-        \textbf{Senior Fall}    &  COMP 490         &  Comps final paper; Code repo     \\
-        \textbf{Senior Spring}  &  -                &  Revisions; Honors                \\
-    \end{tabular}
-    \caption{Timeline summary for comps.}
-    \label{tbl:timeline}
-\end{table}
-
-\subsection{Deliverables}
-
-The two main deliverables for CS comps is the code from the project, submitted together with its documentation as a GitHub link, and a paper about the project.
-While the code component is straightforward and uncontroversial, some students may chafe against the idea of a paper.
-Contrary to popular believe, the job of a software engineer does not only involve writing code.
-It also requires a large amount of written communication, such as tickets for bugs reports, proposals for new features and why it will improve the product, comments on why a class is necessary or how a function works, and documentation of the system architecture.
-As software engineers rise from junior to senior positions, these responsibilities only increase.
-It is often lamented that not enough engineers know how to write \cite{Mei2018WhyDevelopersShould,Alton2020WhyEveryDeveloper}, which is why Google has created courses on technical writing \cite{GoogleTechnicalWriting}, and ``soft skills'' are routinely touted as necessary for software developers \cite{Indeed202111ImportantSoft}.
-
-\begin{comment}
-    Why a paper?
-    Goals for the paper
-\end{comment}
-
-Given these goals, the final paper should be written for an advanced CS undergraduate: someone who has finished Math Foundations, Data Structures, and Computer Organization, but may not have taken the appropriate upper-level courses.
-The paper does not need to explain everything, but should provide enough relevant details so the average reader can understand your results; a walkthrough of the sections of the paper can be found in Section \ref{sec:paper}.
-The paper will be written in LaTeX, to make all final papers uniform in style and to allow for psuedocode and mathematical equations; a template will be provided and required.
-To ensure there is sufficient context and detail, the paper should be about seven pages in length (excluding figures, tables, code, and references).
-The target audience for the paper is other computer science majors in their final year of college, but who may not have taken the same electives that you have.
-That is, you should assume that they have working knowledge of data structures, discrete math, and computer systems, but not necessarily any knowledge of artificial intelligence, machine learning, databases, or other more advanced topics.
-
-The other major deliverable is the code, which should be made available on a public GitHub repository.
-Accompanying the code should be two pieces of documentation, both included in a \texttt{README.md}.
-First, there should be instructions for how to run the code, which should including how to find and install necessary software and packages, how to find and download relevant datasets, and what other requirements (hardware, spatial needs for VR, etc.) are needed.
-This should be written for an audience who is interested in reproducing your work and verifying your results.
-Second, there should be a brief overview of how the code is organized, including the major components that exist and the content and format of the data that is passed between them.
-This should be written for someone who is interested in extending your project --- say, by tweaking the parameters, or adding new functionality, or applying it to a new context.
-
-More details about both deliverables will be provided in the Junior and Seminar Seminars.
-
-\begin{comment}
-    something about non-code projects?
-\end{comment}
-
-\subsection{Selecting a Comps Project}
-
-For many students, selecting a topics for comps is a major source of stress.
-While this is an important decision, it is also one for which you will receive a lot of support.
-Choosing a topic, together with ensuring that you have the relevant background and experience for the project, is a major component of Junior Seminar.
-There have also been students who change their project during Senior Seminar, and still finished their comps within the semester; although this is not recommended, this delayed timeline shows how much leeway there is for exploration and backpedaling.
-
-As a rough guide, comps projects should be equivalent to the work of an upper-level CS elective, and should either dive deeply but narrowly into a subfield of CS, or reach broadly across subfields or across disciplines without being too shallow.
-The only constraint on the topic is that CS+Math and CS+X students must select a project that fits within their theme, and should check with their academic advisor to make sure this is the case.
-Although double majors could do both comps on the same topic, they must have aspects that are unique to each major.
-For example, a cognitive science and computer science double major could do both projects around biologically plausible neural networks, but the cognitive science project might be about comparing its activity to real brains, while the CS project might instead focus on its algorithmic performance.
-We will spend more time on this in class, but you might consider the following prompts in brainstorming your project:
-
+The problem of teaching an agent to drive a car using DRL in Unity can be framed as a Markov decision process (MDP), which is a mathematical framework for modeling decision making in situations where outcomes are partially random and partially under the control of a decision maker. Basic reinforcement learning is modeled as a Markov decision process, defined as:
 \begin{itemize}
-    \item What topics were you most interested in from your classes? What area of CS would you like to dive deeper into?
-    \item Alternately, what topic were you unable to take a class in (either due to full enrollments, or because Oxy doesn't offer it)?
-    \item What interdisciplinary topics or CS-adjacent topics would you like to explore?
-    \item What projects might be a good showcase of your abilities to potential employers in your desired field?
+    \item a set of environment and agent states, \textbf{\textit{S}};
+    \item a set of actions, \textbf{\textit{A}}, the agent can take;
+    \item A transition function to describe the probability of transition (at time \textbf{\textit{t}}) from state \textbf{\textit{s}} to \textbf{\textit{s'}} under action \textbf{\textit{a}} \cite{MarkovDecisionProcess}.
 \end{itemize}
 
-A list of past comps projects can be found online.\footnote{\url{https://www.oxy.edu/academics/areas-study/computer-science/past-senior-comps-projects}}
-
-\section{Interlude: Using \LaTeX}
-
-LaTeX (pronounced \textit{lah-teck} or \textit{lay-teck}), often stylized as {\LaTeX} and written as latex, is a document markup language and typesetting system.
-Building on the {\TeX} language created by Donald Knuth in 1978, LaTeX provides additional commands for common document needs such as sections, figures, and bibliographies.
-LaTeX is widely used in academia, especially in mathematical fields, due to how easy it is to write mathematical equations and its automatic management of references.
-Since it is a markup language, LaTeX source files are written in plain text, which also makes it compatible with version control systems like git.
-
-The most primitive syntax of LaTeX is the \textit{macro} or \textit{command}, which is always written with a backslash followed by the name of the command.
-The {\LaTeX} glyph, for example, can be created with the command \texttt{\textbackslash LaTeX}.
-Some commands take parameters, which are denoted in braces (e.g., \texttt{\textbackslash usepackage\{biblatex\}} will import the \texttt{biblatex} package), with some commands additionally accepting options in square brackets (e.g., \texttt{\textbackslash usepackage[style=numeric]\{biblatex\}}).
-The \texttt{\textbackslash begin} and \texttt{\textbackslash end} commands are special, as they indicate the start and end of an \textit{environment}.
-The content of a LaTeX document, for example, is surrounded by \texttt{\textbackslash begin\{document\}} and \texttt{\textbackslash end\{document\}}, indicating the text that should appear in the document.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=.95\linewidth]{recursion.png}
-    \caption{
-        The current page of this paper, as an image.
-    }
-    \label{fig:first-page}
-\end{figure}
-
-Beyond the basic syntax, much of learning LaTeX is learning the different commands and environments that exist.
-For example, text can be made \textbf{bold} with \texttt{\textbackslash textbf}, \textit{italic} with \texttt{\textbackslash textit}, and \texttt{monospaced} with \texttt{\textbackslash texttt} (the \texttt{tt} stands for for ``teletype'').
-Single dollar signs denote inline equations, so \texttt{\$E = mc\textasciicircum 2\$} will be rendered as $E = mc^2$.
-Double dollar signs will render the equation in display mode, which we can see with the quadratic formula:
-
-$$\frac{{-b \pm \sqrt {b^2 - 4ac} }}{{2a}}$$
-
-There are also a handful of common environments:
-
+In the context of my project, the components of the MDP are:
 \begin{itemize}
-    \item \texttt{itemize} for bulletpoint lists
-    \item \texttt{enumerate} for numbered lists
-    \item \texttt{figure} for figures (see Figure \ref{fig:first-page})
-    \item \texttt{table} and \texttt{tabular} for tables (see Table \ref{tbl:timeline})
-    \item \texttt{lstlisting} for code listings (see Listing \ref{lst:python-hello-world})
+    \item \textbf{States }(\textbf{\textit{S}}):
+    \begin{itemize}
+        \item A state represents the current condition of the environment as perceived by the vehicle/agent.
+        \item This could include:
+        \begin{itemize}
+            \item Vehicle's position, orientation, speed, and acceleration.
+            \item Road conditions, number of lanes, size of lanes, traffic lights
+            \item Position and velocity of observed nearby vehicles and other dynamic obstacles.
+            \item Positions of non-moving observed obstacles such as barriers, lights, or signs.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Actions }(\textbf{\textit{A}}):
+    \begin{itemize}
+        \item Actions are the set of possible moves the agent can take at any state. 
+        \item This could include:
+        \begin{itemize}
+            \item Accelerating, decelerating, or maintaining current speed. Defined by value in range \newline[-1,1].
+            \item Turning right, turning left, maintaining current direction. Defined by value in range \newline[-1,1].
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Transition Function } (\textbf{\textit{P}}):
+    \begin{itemize}
+        \item This function will define the probability of moving from one state to another, given a particular action.
+        \item \textbf{Ex.} If the agent decides to accelerate, this function will provide the probabilities of resultant states, such as:
+        \begin{itemize}
+            \item Successfully overtaking another vehicle
+            \item An unwanted collision with an obstacle due to excessive speed.
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
-\begin{lstlisting}[
-    language=Python,
-    caption={Hello, World! in Python},
-    label={lst:python-hello-world},
-    float
-]
-def hello():
-    print('hello, world!')
-\end{lstlisting}
+Additionally, we want to define a reward function to shape the actions the agent will take given the goal of the agent. 
 
-This covers the most frequently used commands, but as you might have already inferred, LaTeX is a vast and deep system, and can easily be overwhelming.
-We recommended reading through the \citetitle{Overleaf2021LearnLaTeXIn} tutorial \cite{Overleaf2021LearnLaTeXIn} and using the \citetitle{WikiBook2022LaTeX} \cite{WikiBook2022LaTeX} as reference.
-Beyond that, you should examine and play with the source of this document to gain working proficiency with LaTeX.
-
-One final note on writing in LaTeX.
-Since LaTeX is only a markup language, the source files must be compiled into a viewable form, most commonly into a PDF file.
-The source of this document is made up of several files, each with its own purpose:
 \begin{itemize}
-    \item \texttt{document.tex} - The main LaTeX file containing the contents of the document.
-    \item \texttt{oxycomps.sty} - A style file with settings for what the document should look like.
-    \item \texttt{references.bib} - A list of bibliography items.
-    \item Other files containing images, build instructions, etc.
+    \item \textbf{Rewards }(\textbf{\textit{R}}):
+    \begin{itemize}
+        \item Rewards given for maintaining safe distance, staying within speed limits, obeying traffic rules, staying on road, moving towards goal.
+        \item Negative rewards (penalties) given for collisions, near misses, lane/traffic violations.
+    \end{itemize}
 \end{itemize}
-Manual compilation of these files is somewhat esoteric, as it requires multiple uses of the \texttt{pdflatex} and \texttt{biblatex} commands.
-Instead, it is much easier to use tools such as \texttt{pdflatex} or \texttt{latexmk} (in the terminal) or Overleaf (online) for compilation.
-We have also provided a \texttt{Makefile} which will automatically update the document as necessary; the use of makefiles is beyond the scope of this document, but see \textcite{Lambert2021MakefileTutorial}.
 
-\begin{comment}
-No definition citations, unless the term itself is in dispute
-Separate problem background from technical background
-    Unclear if games and apps require much technical background
-    The general structure of the framework might be better suited for the Architecture Overview section
-        Eg. Flask uses decorators to associate functions with URLs
-        Eg. Unity has scripts associated with objects and specific triggers, such as walking into an area, pressing a button, etc.
-    Maybe a better name is "algorithmic background"?
-        Should explore what does and doesn't count
-            All ML counts
-            App and game frameworks do not
-        Framework vs. library?
-            I like the idea of [inversion of control](https://martinfowler.com/bliki/InversionOfControl.html), but that may be too abstract for students to understand
-        Heuristic: is understanding that system necessary to understand the results?
-            Ie. How Flask or Unity works doesn't influence whether the app/game is useful/fun/engaging
-            But how (say) linear regression works is highly relevant for why the results match/don't match the actual values
-\end{comment}
+Finally, we need to define a discount factor ($\gamma$) which determines the present value of future rewards with a range of [0,1]. A higher discount factor would lead to an increased value for future rewards. A discount factor closer to 1 would encourage strategies that prioritize long-term benefits, such as maintaining a safe distance behind a vehicle to prevent a potential collision rather than prioritizing immediate gains like speeding to pass a slow vehicle.
 
-\section{The Oxy CS Comps Paper}
-\label{sec:paper}
+With these elements defined, the problem of training an autonomous vehicle using DRL involves implementing a learning policy that maximizes cumulative future rewards.
 
-This section will walk through the different sections of the comps final paper.
-Note that your specific paper may not have all these sections; for example, it is common for app design projects to combine the methods and evaluation sections, to better match the iterative design process.
-Nonetheless, your paper should have all of the \textit{content} described here.
+This will be done through three steps:
+\begin{enumerate}
+    \item \textbf{Initialization}: Start with random guesses for the policy, mapping from states to chosen actions.
+    \item \textbf{Experience Collection}: The agent will interact with the potentially dynamic environment, collecting and documenting experiences in terms of states, actions, rewards, and next states.
+    \item \textbf{Learning}: Implementing an algorithm such as Deep Q-Networks (DQN) to update the policy based on experiences collected. These updates aim to gradually converge towards an optimal policy that maximizes the cumulative reward.
+\end{enumerate}
 
-\subsection{Introduction and Problem Context}
+My project aims to explore the capabilities of DRL within a controlled simulation, and push the boundaries of what autonomous systems can learn and achieve. However, the introduction of such sophisticated systems into widespread use brings with it a plethora of ethical considerations that must be thoroughly examined. This paper will address these issues, which include but are not limited to:
+\begin{itemize}
+    \item Data bias
+    \item Accessibility
+    \item Power distribution
+    \item Potential for misuse
+\end{itemize}
 
-This section should motivate why the project is interesting both to you and to the computer science community or the general public.
-You should also justify the difficult of the project.
-As a rough guideline, your project should be either narrow but deep in a subfield of CS, or broadly reaching across subfields without being too shallow.
-It should be comparable to the amount of work/content in an upper-level elective.
+I argue that completely addressing all ethical concerns associated with this technology is unattainable due to inherent limitations and complexities in the current technological landscape. By exploring each ethical concern in detail, this paper aims to  highlight the significant challenges that and inevitable shortcomings of ethical management of deploying reinforcement learning in autonomous navigation systems.
+\section{Data Bias}
+    Data bias occurs when an algorithm produces systematic errors due to inaccuracies in the data input. In machine learning, this often arises from non-representative or incomplete training data.
 
-\subsection{Technical Background}
+    In autonomous driving systems, bias can lead to decisions that are not only incorrect, but potentially dangerous\cite{AlgorithmBiasInAutonomousSystems}.
+\subsection{Sources of Data Bias in this Project}
+    \begin{itemize}
+        \item \textbf{Simulated Environment Bias}: A simulated scenario will not fully account for the diversity of real world driving conditions.
+        \item \textbf{Sampling Bias}: Selection of specific scenarios might disproportionately represent certain situations. A simulation will not accurately represent the variability in pedestrian behavior, complexities of different traffic patterns, or levels of visibility.
+        \item \textbf{Human Input Bias}: "Safe Driving" may have a different definition for whoever is developing the rewards/algorithm, influenced by their own driving experience.
+    \end{itemize}
+\subsection{Impacts of Data Bias}
+    \begin{itemize}
+        \item \textbf{Performance Limitations}: A model trained in biased conditions may excel in simulated tests but perform poorly in real world applications. This is often due to the model encountering situations it has not encountered in training and therefor has not learned how to handle those situations.
+        \item \textbf{Safety Concerns}: A model trained predominately in daytime conditions might fail to appropriately recognize pedestrians at night, leading to higher risk of accidents.
+        \item \textbf{Social Implications}: Systemic bias may emerge if, for example, a model performed well in geographically typical scenarios of the developed world, but poorly in less developed scenarios.
+    \end{itemize}
+\subsection{Challenges of Mitigating Data Bias}
+\begin{itemize}
+    \item \textbf{Complexity of Real World Representation}: Practical limitations must be acknowledged in simulating every possible driving condition due to technological constraints and the increase in complexity it would entail.
+    \item \textbf{Bias Identification and Correction}: Biases are often not recognized until specific failures occur, prompting a return to the development phase to integrate new scenarios or re-balance the dataset.
+\end{itemize}
 
-This section introduces the technical knowledge necessary to understand your project, including any terminology and algorithms.
-You should assume that the reader is a CS undergraduate like yourself, but not necessarily familiar with AI/ML/HCI/apps/video games/etc.
+\section{Accessibility}
+    Accessibility in autonomous vehicle technologies refers to the design of systems that are usable by people with a wide range of abilities and disabilities. In the context of deep learning and autonomous driving, ensuring accessibility is challenging and often overlooked in system design\cite{AccessibilityInAutonomousVehicles}.
 
-\subsection{Prior Work}
+\subsection{Sources of Accessibility Issues in this Project}
+    \begin{itemize}
+        \item \textbf{Interface Design}: The user interface of the autonomous system may not be designed to accommodate users with varying physical, cognitive, and sensory abilities.
+        \item \textbf{Technological Exclusivity}: Advanced technologies often require interactions that may exclude non-technical users or those with certain disabilities.
+        \item \textbf{Economic Barriers}: The high cost of development and implementation of accessible technologies can lead to prioritization decisions that exclude certain user groups.
+    \end{itemize}
 
-This section describes of related and/or existing work.
-This could be scientific or scholarly, but may also be a survey of existing products/games.
-The goal of this section is to put your project in the context of what has already been done.
+\subsection{Impacts of Poor Accessibility}
+    \begin{itemize}
+        \item \textbf{User Exclusion}: If the system is not accessible, it may exclude people with disabilities from utilizing autonomous vehicles, potentially increasing societal inequalities.
+        \item \textbf{Safety Risks}: Inaccessible emergency interfaces or controls can pose higher safety risks to users with disabilities.
+    \end{itemize}
 
-\subsection{Methods}
+\subsection{Challenges of Enhancing Accessibility}
+    \begin{itemize}
+        \item \textbf{Design Complexity}: Creating universally accessible systems increases the complexity of the design and testing phases.
+        \item \textbf{Cost Implications}: The financial burden of implementing comprehensive accessibility features can be significant.
+        \item \textbf{Continuous Adaptation}: Accessibility needs change as technologies and societal norms evolve, requiring ongoing updates and refinements.
+    \end{itemize}
 
-This section describes what exactly you will be working on.
-What are you building? How will it combine/incorporate ideas from the literature? Be specific about what you will be doing: talk about the specific algorithm you will implement/use, the specific dataset/platform/API, and what the outcome of your project will look like.
-All of these decisions should be justified as well.
 
-\subsection{Evaluation Metrics}
+\section{Power Distribution}
+    Power distribution in the context of autonomous vehicle technology refers to how decision-making capabilities and operational control are allocated among different stakeholders, including developers, users, regulatory bodies, and potentially malicious actors. The centralization or decentralization of power raises significant ethical concerns, particularly regarding autonomy, surveillance, and control \cite{AVPowerInequity}.
 
-This section describes how you will evaluate your project.
-What will you be measuring, and how will you measure it?
-You might think about what would result in an F, a C, or an A for comps.
-Alternately, think about what are the minimal requirements for passing the class, what you might do if you had more time and resources, and what the best case scenario would be if everything went swimmingly.
+\subsection{Sources of Power Imbalance in this Project}
+    \begin{itemize}
+        \item \textbf{Developer Control}: Developers and corporations often retain significant control over autonomous technology, including proprietary software and hardware, data collection, and algorithm updates. This centralization of control can limit users' autonomy and potentially lead to dependencies that are difficult to break.
+        \item \textbf{User Autonomy}: While autonomous vehicles promise enhanced mobility, they also risk diminishing the user's active decision-making role. Dependence on automated systems may erode individuals' skills and decision-making capacities, potentially leading to a passivity that can be exploited.
+        \item \textbf{Regulatory Influence}: Governments and regulatory bodies possess the power to dictate terms of technology deployment, privacy standards, and safety regulations. However, their influence is often reactive and lagging behind technological advances, which may prevent timely and effective governance.
+    \end{itemize}
 
-\subsection{Evaluation Results and Discussion}
+\subsection{Impacts of Power Distribution}
+    \begin{itemize}
+        \item \textbf{Surveillance and Privacy}: Centralized control over autonomous vehicles could facilitate unprecedented levels of surveillance by developers or governments, especially as these vehicles are equipped to collect extensive data about users and their environments.
+        \item \textbf{Manipulation and Control}: The concentration of power with developers or regulatory bodies could lead to scenarios where vehicle behavior is remotely manipulated for commercial or law enforcement purposes, raising acute ethical and privacy concerns.
+        \item \textbf{Market Dominance}: The ability of large corporations to dominate the market with advanced technologies can stifle competition and innovation, potentially leading to monopolistic behaviors and further concentrating power.
+    \end{itemize}
 
-limitations
+\subsection{Challenges of Addressing Power Imbalance}
+    \begin{itemize}
+        \item \textbf{Technological Opaqueness}: The complexity and proprietary nature of autonomous vehicle technologies make it difficult for users and regulators to fully understand and effectively oversee these systems. This opaqueness can shield significant power imbalances from public scrutiny and regulatory oversight.
+        \item \textbf{Evolving Technologies}: Rapid advancements in technology continually shift power dynamics, often outpacing the development of corresponding ethical norms and regulatory frameworks. This lag complicates efforts to establish fair and equitable power distributions.
+        \item \textbf{Global Disparities}: Different countries and regions may have varying capabilities to adopt and regulate new technologies, leading to global disparities in power and control over autonomous vehicle technology. This can exacerbate inequalities and hinder comprehensive governance.
+    \end{itemize}
 
-\subsection{Ethical Considerations}
+\section{Potential for Misuse}
+    The development of autonomous vehicles using deep reinforcement learning opens up several avenues for misuse that can have significant societal impacts. Whether by malicious actors or through unintended consequences, the potential for misuse is a critical ethical concern that complicates the deployment of this technology\cite{AVCyberAttacks}.
 
-Are there any ethical concerns that might arise from your project?
-You might think about whether your project perpetuates societal inequity (or could be used by others to do so), whether the data/platforms you are using is collected with informed consent and free of bias, and whether you might be subject to technological solutionism instead of working support/better the public infrastructure.
-Include a discussion of how you plan to mitigate these issues in your project.
+\subsection{Sources of Potential Misuse}
+    \begin{itemize}
+        \item \textbf{Malicious Exploits}: As autonomous vehicles are controlled by software that interacts with a complex environment, they are vulnerable to hacking and other cyber attacks. These exploits could lead to unauthorized control over vehicle behavior, endangering public safety.
+        \item \textbf{Surveillance Abuse}: Given the data-intensive nature of autonomous driving technologies, there is a risk that this data could be used for intrusive surveillance. This could be perpetrated not just by state actors but also private companies or criminals, using data to track individuals without their consent.
+        \item \textbf{Software Manipulation}: The software that governs autonomous vehicles can be altered to behave in unethical ways, such as prioritizing the safety of the vehicle over pedestrians in violation of ethical norms, or creating situations that could lead to insurance fraud.
+    \end{itemize}
 
-\subsection{Future Work, and Conclusion}
+\subsection{Impacts of Misuse}
+    \begin{itemize}
+        \item \textbf{Public Safety Risks}: Malicious control or failure modes introduced by exploits could result in accidents, injuries, or worse. The potential for widespread harm is significantly elevated with the proliferation of autonomous vehicles.
+        \item \textbf{Privacy Violations}: Unauthorized surveillance and data misuse could lead to massive breaches of privacy, affecting countless individuals. These breaches would not only violate individual rights but could also undermine public trust in autonomous technologies.
+        \item \textbf{Legal and Ethical Challenges}: Misuse of autonomous vehicle technology raises complex legal issues, such as liability in the case of accidents caused by manipulated software, and ethical issues regarding surveillance and data privacy.
+    \end{itemize}
 
-\subsection{Timeline}
+\subsection{Challenges of Mitigating Misuse}
+    \begin{itemize}
+        \item \textbf{Security Measures}: Implementing robust security measures to protect against hacking and unauthorized access remains a major technical challenge. The complexity of autonomous systems makes them difficult to secure completely.
+        \item \textbf{Regulatory Oversight}: There is a need for comprehensive regulatory frameworks that can keep pace with technological advancements and address the many ways in which misuse can occur. Developing these frameworks is complicated by the global nature of technology deployment and the varying capabilities of regulatory bodies.
+        \item \textbf{Technological Sophistication}: As autonomous technologies become more sophisticated, so too do the methods of misuse. Keeping ahead of malicious actors requires continuous innovation and vigilance in technology design and policy enforcement.
+    \end{itemize}
 
-A timeline of major milestones, with specific items to be completed by specific dates/months.
-Note that this timeline must start over the summer; otherwise you will unlikely have enough time to complete a project of the expected scope.
-As part of the discussion around your timeline, talk about what you already know that would help you with the project, and what you expect to have to learn to be successful.
-Include programming languages, technical concepts, as well as processes (e.g., user testing).
 
-\subsection{Code Documentation}
+\section{Conclusion}
 
-This section will demonstrate that you have thought through the basics of how your code will work. You should include a diagram of the overall data flow of your program, including what the inputs and outputs of each component will be, and how they will be represented.
+This project applies deep reinforcement learning (DRL) to develop autonomous vehicles within a Unity environment, bringing to light several ethical challenges. These include data bias, accessibility limitations, power distribution issues, and the potential for misuse. These problems highlight the inherent limitations of using simulated environments and centralized control systems in this technological field.
 
-\subsection{Appendices}
+Despite the advancements demonstrated, the reasons presented argue that it is not possible to fully address all ethical concerns with the current technology, both within this project as well as the field of autonomous vehicles as a whole. The fast pace at which technology evolves makes it even harder to manage these issues effectively.
 
-\section{Tips and Advice}
+This highlights the importance of continuous ethical review and the need to adapt our methods as technology changes, and stresses the need for ongoing improvements to ensure that technological developments are in line with ethical standards.
 
 \printbibliography
 
 \end{document}
+
+
